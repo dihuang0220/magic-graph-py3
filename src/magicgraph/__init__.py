@@ -56,7 +56,7 @@ class DiGraph(defaultdict):
 
   def make_consistent(self):
     t0 = time()
-    for k in self.iterkeys():
+    for k in self.nodes():
       self[k] = list(sorted(set(self[k])))
 
     t1 = time()
@@ -103,7 +103,7 @@ class DiGraph(defaultdict):
   def number_of_edges(self):
     """Returns the number of directed edges in the graph"""
     #return sum([self.degree(x) for x in self.iterkeys()]) / 2.0
-    return sum([self.degree(x) for x in self.iterkeys()])
+    return sum([self.degree(x) for x in self.nodes()])
 
   def number_of_nodes(self):
     """Returns the number of nodes in the graph"""
