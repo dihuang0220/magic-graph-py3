@@ -3,7 +3,6 @@
 import logging
 from io import open
 from time import time
-from itertools import izip
 from collections import defaultdict, Iterable
 import math
 import random
@@ -448,7 +447,7 @@ def from_numpy(x, undirected=False, weighted=False):
 
     # TODO add handling for dense numpy too
     cx = x.tocoo()
-    for i,j,v in izip(cx.row, cx.col, cx.data):
+    for i,j,v in zip(cx.row, cx.col, cx.data):
         if weighted:
            G[i].append(j, weight=v)
         else:
