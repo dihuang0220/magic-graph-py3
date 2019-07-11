@@ -28,7 +28,7 @@ class DiGraph(defaultdict):
     return self.keys()
 
   def adjacency_iter(self):
-    return self.iteritems()
+    return self.items()
 
   def subgraph(self, nodes={}):
     subgraph = Graph()
