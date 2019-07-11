@@ -253,7 +253,7 @@ class WeightedDiGraph(DiGraph):
 
   def make_consistent(self):
     t0 = time()
-    for k in self.iterkeys():
+    for k in self.nodes():
       unique_self, unique_indices = np.unique(self[k], return_index=True)
       unique_weights = [self[k].weights[i] for i in unique_indices]
       temp = WeightedNode()
@@ -429,7 +429,7 @@ def load_matfile(file_, variable_name="network", undirected=False, weighted=Fals
 def from_networkx(G_input, undirected=False):
     G = Graph()
     for idx, x in enumerate(G_input.nodes_iter()):
-        for y in G_input[x].iterkeys():
+        for y in G_input[x].nodes():
             G[x].append(y)
 
     if undirected:
