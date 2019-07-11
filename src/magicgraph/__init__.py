@@ -441,7 +441,7 @@ def from_networkx(G_input, undirected=False):
 
 def from_numpy(x, undirected=False, weighted=False):
     if weighted:
-        print "G is weighted"
+        print ("G is weighted")
         G = WeightedDiGraph()
     else:
         G = Graph()
